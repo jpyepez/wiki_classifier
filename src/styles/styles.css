@@ -1,0 +1,28 @@
+/* common styles */
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    background-color: #E9E8ED;
+}
+
+nav {
+    background-color: #1C212F;
+    color: white;
+}
+
+section:first-of-type {
+    background-color: #F2F6F9;
+}
+
+fieldset {
+    border: none;
+}
+
+/* end of common styles */

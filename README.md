@@ -1,1 +1,1 @@
-# Random Classifier
+# Wiki Image Classifier
