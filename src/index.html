@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Wiki Image Classifier</title>
-    <!-- <script src="https://unpkg.com/ml5@0.1.1/dist/ml5.min.js"></script> -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Open+Sans:400,600|Roboto" rel="stylesheet">
 </head>
 <body>
     <nav id="form-section">
         <h1>Wiki Image Classifier</h1>
     </nav>
-    <section>
+    <section id="search-form">
         <fieldset>
                 <label for="image-input">Search Wikipedia</label>
                 <input type="text" id="image-url" name="image-url" required/>
+                <small class="text-helper">*Required</small>
         </fieldset>
     </section>
-    <section>
-        <p id="instructions">Searching will get all JPG images from the most relevant Wikipedia
+    <section id="container">
+        <p>Searching will get all JPG images from the most relevant Wikipedia
         article and MobileNet image classifier will attempt to label them.</p>
-        <div id="container"></div>
     </section>
 </body>
 </html>
