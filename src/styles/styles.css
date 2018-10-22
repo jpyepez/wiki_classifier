@@ -1,5 +1,10 @@
 /* common styles */
 
+:root {
+    --nav-top: 2.75rem;
+    --nav-left: 3rem;
+}
+
 html {
     font-size: 62.5%;
     box-sizing: border-box;
@@ -41,24 +46,64 @@ section:first-of-type {
 fieldset {
     border: none;
     margin: 0;
+    padding: 0;
+    position: relative;
 }
 
 fieldset > label {
+    position: absolute;
+    top: calc(var(--nav-top) + 0.6rem);
+    left: calc(var(--nav-left) + 1rem);
+    z-index: 1;
     font-family: "Open Sans", Arial, sans-serif;
     font-size: 1.4rem;
     font-weight: 400;
     color: #999;
+    pointer-events: none;
+    transition: all .2s;
+}
+
+label.active {
+    top: calc(var(--nav-top) - 1.2rem);
+    padding: 0 .25rem;
+    background-color: #F2F6F9;
+    border-radius: 0.25rem;
+    font-size: 1.2rem; 
+    font-weight: 600;
+    color: #34CB6E;
 }
 
 input {
+    width: 30rem;
+    height: 3rem;
+    position: absolute;
+    top: var(--nav-top);
+    left: var(--nav-left);
+    padding: 0 1rem;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
     outline: none;
 }
 
+input:focus {
+    border: medium solid #34CB6E;
+    border-radius: .5rem;
+}
+
+
 .text-helper {
+    position: absolute;
+    top: calc(var(--nav-top) + 4rem);
+    left: calc(var(--nav-left) + 1rem);
     display: block;
     font-family: "Roboto", Arial, sans-serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #999;
+}
+
+.required:after {
+    content: "*";
 }
 
 /* end of search form */

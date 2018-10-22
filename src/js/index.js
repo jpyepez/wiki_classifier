@@ -11,6 +11,21 @@ import '../styles/styles.css';
 const container = document.getElementById('container');
 const imageUrl = document.getElementById('image-url');
 const imageBtn = document.getElementById('classify-btn');
+const label = document.querySelector('label');
+const input = document.querySelector('input');
+
+input.addEventListener("focus", function() {
+    label.classList.add("active");
+    console.log(label.classList);
+})
+
+input.addEventListener("blur", function() {
+    if(input.value === "") {
+        label.classList.remove("active");
+        console.log(label.classList);
+    }
+})
+
 
 // Initialize the Image Classifier method with MobileNet
 const classifier = ml5.imageClassifier('MobileNet', function() {
