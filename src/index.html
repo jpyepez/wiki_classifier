@@ -9,7 +9,7 @@
 </head>
 <body>
     <nav id="form-section">
-        <h1>Wiki Image Classifier</h1>
+        <h1><a id="logo" href=".">Wiki Image Classifier</a></h1>
     </nav>
     <section id="search-form">
         <fieldset>
@@ -19,8 +19,13 @@
         </fieldset>
     </section>
     <section id="container">
-        <p>Searching will get all JPG images from the most relevant Wikipedia
+        <p id="instructions">Searching will get all JPG images from the most relevant Wikipedia
         article and MobileNet image classifier will attempt to label them.</p>
+        <div class="card">
+            <div class="thumbnail-wrapper">
+                <img id="thumb-ph">
+            </div>
+        </div>
     </section>
 </body>
 </html>

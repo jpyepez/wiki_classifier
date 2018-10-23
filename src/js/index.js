@@ -7,12 +7,16 @@ import isImageUrl from 'is-image-url';
 import { findImages } from './wikipedia';
 import { createCard } from './createCard';
 import '../styles/styles.css';
+import astro from '../assets/astro.jpg';
 
 const container = document.getElementById('container');
 const imageUrl = document.getElementById('image-url');
 const imageBtn = document.getElementById('classify-btn');
 const label = document.querySelector('label');
 const input = document.querySelector('input');
+const thumb_ph =  document.getElementById('thumb-ph');
+
+thumb_ph.src = astro;
 
 input.addEventListener("focus", function() {
     label.classList.add("active");

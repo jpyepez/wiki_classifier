@@ -23,14 +23,28 @@ nav {
     width: 100%;
     height: 4rem;
     background-color: #1C212F;
-    color: #FFF;
+    display: flex;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 .3rem .4rem rgba(0, 0, 0, .4);
 }
 
 h1 {
     margin: 0;
+    padding: 0 2rem;
     font-family: "Open Sans", Arial, sans-serif;
     font-size: 2.4rem;
     font-weight: 600;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+nav a:hover {
+    color: #CCC;
 }
 
 /* end of navbar */
@@ -114,7 +128,20 @@ input:focus {
     font-family: "Open Sans", Arial, sans-serif;
     font-size: 1.4rem;
     font-weight: 400;
-    color: #777;
+    color: #888;
+}
+
+#instructions {
+    padding: 3rem;
+    text-align: center;
+}
+
+.card {
+    width: 30rem;
+    height: 40rem;
+    margin: 3rem;
+    padding: 1rem;
+    background-color: #fff;
 }
 
 /* end of container */
