@@ -19,11 +19,43 @@
         </fieldset>
     </section>
     <section id="container">
-        <p id="instructions">Searching will get all JPG images from the most relevant Wikipedia
-        article and MobileNet image classifier will attempt to label them.</p>
+
+<!-- <p id="instructions">Searching will get all JPG images from the most relevant Wikipedia
+        article and MobileNet image classifier will attempt to label them.</p> -->
+
         <div class="card">
             <div class="thumbnail-wrapper">
-                <img id="thumb-ph">
+                <img id="thumb-ph" class="thumbnail">
+            </div>
+            <div class="separator">
+            </div>
+            <div class="panel">
+                <div class="classification">
+                    <h3 class="classification-label">Astronaut, Human Being</h3>
+                    <h5 class="classification-title">MobileNet Classification</h5>
+                </div>
+                <div class="probability">
+                    <h2 class="probability-pct">99.9%</h2>
+                    <h5 class="classification-title">Probability</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="thumbnail-wrapper">
+                <img id="thumb-ph2" class="thumbnail">
+            </div>
+            <div class="separator">
+            </div>
+            <div class="panel">
+                <div class="classification">
+                    <h3 class="classification-label">Cube, Geometry</h3>
+                    <h5 class="classification-title">MobileNet Classification</h5>
+                </div>
+                <div class="probability">
+                    <h2 class="probability-pct">80.9%</h2>
+                    <h5 class="classification-title">Probability</h5>
+                </div>
             </div>
         </div>
     </section>

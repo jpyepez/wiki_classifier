@@ -8,6 +8,7 @@ import { findImages } from './wikipedia';
 import { createCard } from './createCard';
 import '../styles/styles.css';
 import astro from '../assets/astro.jpg';
+import cube from '../assets/cube.jpg';
 
 const container = document.getElementById('container');
 const imageUrl = document.getElementById('image-url');
@@ -15,8 +16,11 @@ const imageBtn = document.getElementById('classify-btn');
 const label = document.querySelector('label');
 const input = document.querySelector('input');
 const thumb_ph =  document.getElementById('thumb-ph');
+const thumb_ph2 =  document.getElementById('thumb-ph2');
 
+// placeholder images
 thumb_ph.src = astro;
+thumb_ph2.src = cube;
 
 input.addEventListener("focus", function() {
     label.classList.add("active");
