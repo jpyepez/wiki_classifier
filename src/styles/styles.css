@@ -105,7 +105,6 @@ input:focus {
     border-radius: .5rem;
 }
 
-
 .text-helper {
     position: absolute;
     top: calc(var(--nav-top) + 4rem);
@@ -125,9 +124,11 @@ input:focus {
 /* container */
 
 #container {
+    margin: .5rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 #container > p {
@@ -136,6 +137,10 @@ input:focus {
     font-weight: 400;
     color: #888;
 
+}
+
+@media all and (min-width: 1026px) {
+    #container {justify-content: flex-start}
 }
 
 #instructions {
@@ -147,7 +152,7 @@ input:focus {
 .card {
     width: 30rem;
     height: 40rem;
-    margin: 3rem;
+    margin: 2.5rem;
     padding: 0rem;
     background-color: #fff;
     box-shadow: .2rem .2rem .4rem rgba(0, 0, 0, .4);
@@ -182,7 +187,32 @@ input:focus {
 .classification {
     width: 20rem;
     height: 10rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.classification-label {
+    margin: 1rem 1rem 0 1rem;
+    padding: 0;
+    font-family: "Open Sans", Arial, sans-serf;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #1C212F;
+}
+
+.classification-title {
+    margin: 1rem 1rem 1.6rem;
+    padding: 0;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #7A8399;
 }
 
 .probability {
@@ -191,32 +221,13 @@ input:focus {
     background-color: #F2F6F9;
 }
 
-.classification-label {
-    margin: 1rem;
-    padding: 0;
-    font-family: "Open Sans", Arial, sans-serf;
-    font-size: 1.8rem;
-    font-weight: 400;
-    color: #1C212F;
-}
-
 .probability-pct {
-    margin: 1rem;
+    margin: 1.4rem 1rem;
     padding: 0;
     font-family: "Open Sans", Arial, sans-serf;
     font-size: 3rem;
     font-weight: 400;
     color: #1C212F;
-}
-
-.classification-title {
-    margin: 1rem;
-    padding: 0;
-    font-family: Montserrat, Arial, sans-serif;
-    font-size: 1.2rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: #7A8399;
 }
 
 /* end of container */
