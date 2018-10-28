@@ -9,18 +9,21 @@ import { createCard } from './createCard';
 import '../styles/styles.css';
 import astro from '../assets/astro.jpg';
 import cube from '../assets/cube.jpg';
+import fontawesome from '@fortawesome/fontawesome-free';
+import faFreeSolid from '@fortawesome/fontawesome-free/js/solid';
 
 const container = document.getElementById('container');
 const imageUrl = document.getElementById('image-url');
 const imageBtn = document.getElementById('classify-btn');
 const label = document.querySelector('label');
 const input = document.querySelector('input');
+const searchBtn = document.getElementById('search-btn');
 const thumb_ph =  document.getElementById('thumb-ph');
 const thumb_ph2 =  document.getElementById('thumb-ph2');
 
 // placeholder images
-thumb_ph.src = astro;
-thumb_ph2.src = cube;
+// thumb_ph.src = astro;
+// thumb_ph2.src = cube;
 
 input.addEventListener("focus", function() {
     label.classList.add("active");
@@ -75,6 +78,11 @@ imageUrl.addEventListener("keypress", function(e) {
         submit(imageUrl.value);
     }
 })
+
+searchBtn.addEventListener("click", function() {
+    submit(imageUrl.value);
+})
+
 
 // const paragraph = document.createElement('p');
 // paragraph.textContent = `MobileNet has labeled this as a ${className}, with a probability of ${probability}.`;

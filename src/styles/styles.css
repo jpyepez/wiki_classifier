@@ -105,6 +105,24 @@ input:focus {
     border-radius: .5rem;
 }
 
+#search-btn {
+    height: 3rem;
+    top: var(--nav-top);
+    margin: 0.75rem;
+    left: calc(var(--nav-left) + 29rem);
+    position: absolute;
+    z-index: 1;
+
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #999;
+    cursor: pointer;
+}
+
+#search-btn:hover {
+    color: #555;
+}
+
 .text-helper {
     position: absolute;
     top: calc(var(--nav-top) + 4rem);
@@ -139,15 +157,14 @@ input:focus {
 
 }
 
-@media all and (min-width: 1026px) {
-    #container {justify-content: flex-start}
-}
-
 #instructions {
     display: block;
-    padding: 3rem;
+    margin: 0;
+    width: 100%;
+    padding: 4rem;
     text-align: center;
 }
+
 
 .card {
     width: 30rem;
@@ -228,6 +245,14 @@ input:focus {
     font-size: 3rem;
     font-weight: 400;
     color: #1C212F;
+}
+
+@media all and (min-width: 1026px) {
+    #container {justify-content: flex-start}
+}
+
+@media all and (max-width: 590px) {
+    #instructions {width: 31rem;}
 }
 
 /* end of container */

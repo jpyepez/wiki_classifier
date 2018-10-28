@@ -1,6 +1,7 @@
 
 const formatFloat = (value) => {
-    return Math.round(value*100).toFixed(1);
+    const pct = Math.round(value*1000)/10;
+    return (pct === 100) ? pct.toFixed(0) : pct.toFixed(1);
 }
 
 export const createCard = (image, classification, parent) => {
