@@ -2,10 +2,11 @@
 Todo:
   ✔ Generate styled cards on JS end @done(18-10-26 10:09)
   ✔ Handle 100% probability @done(18-10-27 08:56)
-  ☐ Truncate cards to 2 lines
+  ✔ Truncate cards to 2 lines @done(18-10-28 20:14)
   ✔ Search button @done(18-10-27 11:54)
-  ☐ Display/remove instructions
-  ☐ Clear search
+  ✔ Display/remove instructions @done(18-10-28 19:36)
+  ✔ Clear search @done(18-10-28 19:36)
+  ✘ Handle empty search/required @cancelled(18-10-28 19:39)
   ☐ Handle disambiguation (maybe "no images found, possible disambiguation")
-  ☐ Handle empty search/required
+  ☐ Handle search state if full.
 

@@ -2,10 +2,9 @@ if(!global._babelPolyfill) {
     require('@babel/polyfill');
 }
 
-import ml5 from 'ml5'; // need to import for polyfill
-import isImageUrl from 'is-image-url';
+// import ml5 from 'ml5'; // need to import for polyfill
+import {loadImage} from './classifier';
 import { findImages } from './wikipedia';
-import { createCard } from './createCard';
 import '../styles/styles.css';
 import astro from '../assets/astro.jpg';
 import cube from '../assets/cube.jpg';
@@ -35,41 +34,11 @@ input.addEventListener("blur", function() {
     }
 })
 
-// Initialize the Image Classifier method with MobileNet
-const classifier = ml5.imageClassifier('MobileNet', function() {
-    console.log('Model Loaded!');
-  });
-
-const loadImage = async (url) => {
-
-    if (isImageUrl(url)) {
-
-        // load image
-        // use handler to classify when loaded
-        const downloadingImage = new Image();
-        downloadingImage.crossOrigin = "anonymous";
-        downloadingImage.onload = function() {
-            classifier.predict(this, (err, results) => {
-                if (err) {
-                    console.error(err);
-                } else {
-                    createCard(this, results, container)
-                    // console.log(results);
-                }
-            })
-        }
-        downloadingImage.src = url;
-
-        return downloadingImage;
-
-    } else {
-        console.log("URL is not an image.")
-    }
-}
-
 const submit = async (term) => {
     const wikiImgUrls = await findImages(term);
-    wikiImgUrls.forEach(loadImage);
+
+    container.innerHTML = "";
+    wikiImgUrls.forEach(url => loadImage(url, container));
 }
 
 imageUrl.addEventListener("keypress", function(e) {
