@@ -23,9 +23,9 @@ module.exports = {
       facebook: {
         'og:url': "https://projects.jpyepez.com/WikiClassifier/",
         'og:type': "website",
-        'og:title': "Wikipedia Image Classifier",
+        'og:title': "Wiki Classifier",
         'og:image': './src/assets/thumb.png',
-        'og:description': "",
+        'og:description': "Web App that gets images from Wikipedia and classifies them using the MobileNet model.",
         'og:site_name': "JP Yepez - Projects",
         'og:locale': "en_US",
       },
@@ -34,7 +34,7 @@ module.exports = {
         "twitter:creator": "@jpyepezartist",
         "twitter:url": "https://projects.jpyepez.com/WikiClassifier/",
         "twitter:title": "Wikipedia Image Classifier",
-        "twitter:description": "",
+        "twitter:description": "Web App that gets images from Wikipedia and classifies them using the MobileNet model.",
         "twitter:image": './src/assets/thumb.png'
       }
         })
@@ -70,5 +70,8 @@ module.exports = {
                 use: 'file-loader',
             }
         ]
+    },
+    externals: {
+        "isomorphic-fetch": "fetch"
     }
 };

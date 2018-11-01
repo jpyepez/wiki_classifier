@@ -7,6 +7,7 @@ Todo:
   ✔ Display/remove instructions @done(18-10-28 19:36)
   ✔ Clear search @done(18-10-28 19:36)
   ✘ Handle empty search/required @cancelled(18-10-28 19:39)
+  ✔ Handle search state if full. @done(18-10-29 09:44)
+  ✔ Loading svg. @done(18-10-29 10:31)
   ☐ Handle disambiguation (maybe "no images found, possible disambiguation")
-  ☐ Handle search state if full.
 

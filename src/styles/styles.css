@@ -11,11 +11,13 @@ html {
 }
 
 body {
-    margin: 0;
+    margin: 0 0 2rem 0;
     padding: 0;
     font-family: "Montserrat", sans-serif;
     background-color: #E9E8ED;
 }
+
+/* end of common styles */
 
 /* navbar */
 
@@ -24,6 +26,8 @@ nav {
     height: 4rem;
     background-color: #1C212F;
     display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
     align-items: center;
     position: relative;
     box-shadow: 0 .3rem .4rem rgba(0, 0, 0, .4);
@@ -35,6 +39,16 @@ h1 {
     font-family: "Open Sans", Arial, sans-serif;
     font-size: 2.4rem;
     font-weight: 600;
+    text-align: center;
+}
+
+
+h2 {
+    margin: 0;
+    padding: 0 2rem;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
     text-align: center;
 }
 
@@ -78,11 +92,19 @@ fieldset > label {
     transition: all .2s;
 }
 
-label.active {
-    top: calc(var(--nav-top) - 1.2rem);
+label.filled {
+    top: calc(var(--nav-top) - 1.4rem);
     padding: 0 .25rem;
     background-color: #F2F6F9;
-    border-radius: 0.25rem;
+    font-size: 1.2rem; 
+    font-weight: 600;
+    color: #999;
+}
+
+label.active {
+    top: calc(var(--nav-top) - 1.4rem);
+    padding: 0 .25rem;
+    background-color: #F2F6F9;
     font-size: 1.2rem; 
     font-weight: 600;
     color: #34CB6E;
@@ -155,7 +177,6 @@ input:focus {
     font-size: 1.4rem;
     font-weight: 400;
     color: #888;
-
 }
 
 #instructions {
@@ -166,11 +187,24 @@ input:focus {
     text-align: center;
 }
 
+#error {
+    display: block;
+    margin: 0;
+    width: 100%;
+    padding: 4rem;
+    text-align: center;
+}
+
+#loading {
+    width: 10rem;
+    height: 10rem;
+    margin: 10rem auto;
+}
 
 .card {
     width: 30rem;
     height: 40rem;
-    margin: 2.5rem;
+    margin: 2rem;
     padding: 0rem;
     background-color: #fff;
     box-shadow: .2rem .2rem .4rem rgba(0, 0, 0, .4);
@@ -250,8 +284,9 @@ input:focus {
     color: #1C212F;
 }
 
-@media all and (min-width: 1026px) {
+@media all and (min-width: 1025px) {
     #container {justify-content: flex-start}
+    .card {margin: 2.5rem}
 }
 
 @media all and (max-width: 590px) {
@@ -260,4 +295,44 @@ input:focus {
 
 /* end of container */
 
-/* end of common styles */
+/* footer */
+footer {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    font-family: "Open Sans", Arial, sans-serf;
+    font-size: 1.4rem;
+    text-align: right;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    background-color: #1C212F;
+}
+
+footer > p {
+    margin: 0;
+    padding: .3rem 2rem;
+}
+
+footer a:link {
+    color: #34CB6E;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: white;
+}
+
+footer a:active {
+    color: white;
+}
+
+footer a:visited {
+    color: #34CB6E;
+}
+
+/* end of footer */

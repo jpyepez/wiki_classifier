@@ -5,15 +5,17 @@ if(!global._babelPolyfill) {
 // import ml5 from 'ml5'; // need to import for polyfill
 import {loadImage} from './classifier';
 import { findImages } from './wikipedia';
+import createLoading from './createLoading';
 import '../styles/styles.css';
-import astro from '../assets/astro.jpg';
-import cube from '../assets/cube.jpg';
 import fontawesome from '@fortawesome/fontawesome-free';
 import faFreeSolid from '@fortawesome/fontawesome-free/js/solid';
 
+// load placeholder images
+// import astro from '../assets/astro.jpg';
+// import cube from '../assets/cube.jpg';
+
 const container = document.getElementById('container');
 const imageUrl = document.getElementById('image-url');
-const imageBtn = document.getElementById('classify-btn');
 const label = document.querySelector('label');
 const input = document.querySelector('input');
 const searchBtn = document.getElementById('search-btn');
@@ -29,16 +31,31 @@ input.addEventListener("focus", function() {
 })
 
 input.addEventListener("blur", function() {
-    if(input.value === "") {
-        label.classList.remove("active");
+    label.classList.remove("active");
+    if(input.value !== "") {
+        label.classList.add("filled");
+    } else {
+        label.classList.remove("filled");
     }
 })
 
 const submit = async (term) => {
+    container.innerHTML = "";
+    createLoading(container);
     const wikiImgUrls = await findImages(term);
 
-    container.innerHTML = "";
-    wikiImgUrls.forEach(url => loadImage(url, container));
+    if(wikiImgUrls) {
+        if(wikiImgUrls.length === 0) {
+            container.innerHTML = "";
+            const markup = `
+                <p id="error">No images found. Please try a more specific search (e.g., "the joker" instead of "joker").</p>
+            `;
+            container.insertAdjacentHTML('afterbegin', markup);
+        } else {
+            container.innerHTML = "";
+            wikiImgUrls.forEach(url => loadImage(url, container));
+        }
+    }     
 }
 
 imageUrl.addEventListener("keypress", function(e) {
@@ -58,12 +75,6 @@ searchBtn.addEventListener("click", function() {
 // 
 // parent.appendChild(inputImg);
 // parent.appendChild(paragraph)
-
-
-// maybe use magnifying glass as button
-// imageBtn.addEventListener("click", async function() {
-//     submit(imageUrl.value);
-// });
 
 // Test urls
 const penguinUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/South_Shetland-2016-Deception_Island%E2%80%93Chinstrap_penguin_%28Pygoscelis_antarctica%29_04.jpg/1200px-South_Shetland-2016-Deception_Island%E2%80%93Chinstrap_penguin_%28Pygoscelis_antarctica%29_04.jpg"
