@@ -14,7 +14,6 @@ export const findImages = async (key) => {
         let images = await page.images();
         images = images.filter(isImageUrl);
         images = images.filter(isJPG);
-        images = images.slice(0, 10);
         return images;
     } catch (error) {
         container.innerHTML = "";
